@@ -33,6 +33,7 @@ app.post('/', function (req, res) {
             console.log(weather);
             if (weather.main == undefined) {
                 res.render('index', {
+                    temp: null,
                     weather: null,
                     error: 'Error, please try again'
                 });
