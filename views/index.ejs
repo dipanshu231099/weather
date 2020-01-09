@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class='flexbox'>
+        <div class="left">
+            <div style="height: 50%;">
+                <h1><u>WEATHER</u></h1>
+                <form action="/" method="post">
+                    <div class="input-group mb-3">
+                        <input name="city" class="form-control" type="text" class="ghost-input"
+                            placeholder="Enter a City" required>
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="submit">SUBMIT</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <p id="temperature">
+                <h3><u>TEMPERATURE</u></h3>
+            </p>
+            <% if(temp !== null){ %>
+            <span style="font-size: 10rem;"><%= temp %></span> deg Celsius
+            <% } %>
+        </div>
+        <div class="right">
+            <h1><u>FORECAST</u></h1>
+            <p id="today">
+                <h3><u>TODAY</u></h3>
+            </p>
+            <% if(temp !== null){ %>
+            feels like <span style="font-size: 4rem;"><%= feel %></span> deg Celsius
+            <br>
+            Min Temp <span style="font-size: 4rem;"><%= temp_min %></span> deg Celsius
+            <br>
+            Max Temp <span style="font-size: 4rem;"><%= temp_max %></span> deg Celsius
+            <br>
+            wind blows at <span style="font-size: 4rem;"><%= wind_speed %></span> mps
+            <br>
+            <% } %>
+
+            <% if(error !== null){ %>
+            <p><%= error %></p>
+            <% } %>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+</script>
+
+</html>

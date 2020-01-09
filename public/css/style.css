@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.flexbox {
+    display: flex;
+    flex-direction:row;
+}
+
+.left {
+    width: 50%;
+    height: 100vh;
+    background-color: #F5A72F;
+    color: white;
+    text-align: right;
+    padding: 5%;
+}
+/* 
+.left textarea {
+    color: #F5A72F;
+    height: 3rem;
+    font-size: 1.5rem;
+    margin: 0;
+}
+*/
+
+.left button {
+    background-color: black;
+}
+
+textarea::placeholder {
+    color: #F5A72F;
+    opacity: 0.5;
+}
+
+.right {
+    width: 50%;
+    height: 100vh;
+    color: #F5A72F;
+    padding: 5%;
+}
