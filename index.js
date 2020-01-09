@@ -13,7 +13,7 @@ app.set('view engine', 'ejs')
 
 app.get('/', function (req, res) {
     res.render('index', {
-        weather: null,
+        temp: null,
         error: null
     });
 })
@@ -25,7 +25,7 @@ app.post('/', function (req, res) {
     request(url, function (err, response, body) {
         if (err) {
             res.render('index', {
-                weather: null,
+                temp: null,
                 error: 'Error, please try again'
             });
         } else {
@@ -34,7 +34,6 @@ app.post('/', function (req, res) {
             if (weather.main == undefined) {
                 res.render('index', {
                     temp: null,
-                    weather: null,
                     error: 'Error, please try again'
                 });
             } else {
